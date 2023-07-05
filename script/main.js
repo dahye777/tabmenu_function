@@ -9,13 +9,22 @@ btns.forEach((el, index)=>{
         // btns에 반복을 돌면서 on클래스를 제거하고
         // 클릭이벤트가 발생한 index에 on클래스를 추가함
         // boxes에도 마찬가지
-        for(let el of btns) el.classList.remove("on");
-        btns[index].classList.add("on");
+        active(btns, index);
+        active(boxes, index);
 
-        for(let el of boxes) el.classList.remove("on");
-        boxes[index].classList.add("on");
+        // for(let el of btns) el.classList.remove("on");
+        // btns[index].classList.add("on");
+
+        // for(let el of boxes) el.classList.remove("on");
+        // boxes[index].classList.add("on");
     })
 })
+
+// 함수패키징
+function active(arr, index){
+    for(let el of arr) el.classList.remove("on");
+    arr[index].classList.add("on");
+}
 
 /*
 1. 절차지향적 코드(프로그래밍) : 코드를 단계적인 절차로 구성하고,
